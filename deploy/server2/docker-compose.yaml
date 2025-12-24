@@ -237,6 +237,39 @@ services:
     depends_on:
       airflow-init:
         condition: service_completed_successfully
+        
+  spark-master:
+    image: apache/spark:3.5.2
+    container_name: spark-master
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
+    ports:
+      - "8082:8080" # Spark Master Web UI
+      - "7077:7077" # Spark Master internal port
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_RPC_SSL_ENABLED=no
+      - SPARK_LOCAL_IP=spark-master
+    volumes:
+      - ./master/data:/opt/spark/work-dir
+
+  spark-worker:
+    image: apache/spark:3.5.2 # Use the same image as the master
+    container_name: spark-worker
+    ports:
+      - "8083:8081"
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077 # Connects to the master service name
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_RPC_SSL_ENABLED=no
+      - SPARK_WORKER_CORES=4 # Allocate cores
+      - SPARK_WORKER_MEMORY=4g # Allocate memory
+    volumes:
+      - ./worker/data:/opt/spark/work-dir
 
   
   
