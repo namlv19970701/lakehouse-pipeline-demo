@@ -17,7 +17,7 @@ Pipelines:
 </figure>
 
 <figure align="center">
-  <img src="images/lakehouse_transformation" width="720"/>
+  <img src="images/lakehouse_transformation.png" width="720"/>
   <figcaption><em>Lakehouse Transformation</em></figcaption>
 </figure>
 
