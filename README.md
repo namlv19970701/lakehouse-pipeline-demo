@@ -11,8 +11,15 @@ Videos:
 
 Pipelines:
 
-- ![Lakehouse Ingestion](images/lakehouse_ingestion.png)
-- ![Lakehouse Transformation](images/lakehouse_transformation.png)
+<figure align="center">
+  <img src="images/lakehouse_ingestion.png" width="720"/>
+  <figcaption><em>Lakehouse Ingestion</em></figcaption>
+</figure>
+
+<figure align="center">
+  <img src="images/lakehouse_transformation" width="720"/>
+  <figcaption><em>Lakehouse Transformation</em></figcaption>
+</figure>
 
 ## 📋 Table of Contents
 
