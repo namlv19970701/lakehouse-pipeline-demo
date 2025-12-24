@@ -2,6 +2,18 @@
 
 A comprehensive demonstration of a modern data lakehouse architecture using open-source technologies. This project showcases a complete data pipeline from ingestion to transformation, orchestrated across two servers.
 
+Videos:
+
+- [Lakehouse Ingestion 1](https://www.youtube.com/watch?v=GxTBjr51nQg)
+- [Lakehouse Ingestion 2](https://www.youtube.com/watch?v=v2rJo33PBCw)
+- [Lakehouse Transformation](https://www.youtube.com/watch?v=NIwk2DX44Ww)
+- [Lakehouse Visualization]
+
+Pipelines:
+
+- [Lakehouse Ingestion](images/lakehouse ingestion.png)
+- [Lakehouse Transformation](images/lakehouse_transformation.png)
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
